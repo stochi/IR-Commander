@@ -95,11 +95,11 @@ void loop(void) {
     Serial.println("ARROW Undo");
   }
   //commands
-   if (IRcompare(numberpulses, stop,sizeof(stop)/4)) {
-    Serial.println("STOP");
+   if (IRcompare(numberpulses, stopMode,sizeof(stopMode)/4)) {
+    Serial.println("STOP/MODE");
   }
-   if (IRcompare(numberpulses, undo,sizeof(undo)/4)) {
-    Serial.println("UNDO");
+   if (IRcompare(numberpulses, setup,sizeof(setup)/4)) {
+    Serial.println("SETUP");
   }
   delay(500);
 }
