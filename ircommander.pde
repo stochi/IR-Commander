@@ -48,6 +48,10 @@ void loop(void) {
   Serial.print("Heard ");
   Serial.print(numberpulses);
   Serial.println("-pulse long IR signal");
+  
+  if (IRcompare(numberpulses, number0, sizeof(number0)/4)) {
+    Serial.println("NUMBER - 10");
+  }
   if (IRcompare(numberpulses, number1, sizeof(number1)/4)) {
     Serial.println("NUMBER - 1");
   }
@@ -74,32 +78,6 @@ void loop(void) {
   }
    if (IRcompare(numberpulses, number9, sizeof(number9)/4)) {
     Serial.println("NUMBER - 9");
-  }
-   if (IRcompare(numberpulses, number10, sizeof(number10)/4)) {
-    Serial.println("NUMBER - 10");
-  }
-  //arrows
-   if (IRcompare(numberpulses, arrrowUp,sizeof(arrowUp)/4)) {
-    Serial.println("ARROW UP");
-  }
-   if (IRcompare(numberpulses, arrowLeft,sizeof(arrowLeft)/4)) {
-    Serial.println("ARROW LEFT");
-  }
-   if (IRcompare(numberpulses, arrowDown,sizeof(arrowDown)/4)) {
-    Serial.println("ARROW DOWN");
-  }
-   if (IRcompare(numberpulses, arrowRight,sizeof(arrowRight)/4)) {
-    Serial.println("ARROW RIGHT");
-  }
-   if (IRcompare(numberpulses, arrowUndo,sizeof(arrowUndo)/4)) {
-    Serial.println("ARROW Undo");
-  }
-  //commands
-   if (IRcompare(numberpulses, stopMode,sizeof(stopMode)/4)) {
-    Serial.println("STOP/MODE");
-  }
-   if (IRcompare(numberpulses, setup,sizeof(setup)/4)) {
-    Serial.println("SETUP");
   }
   delay(500);
 }
